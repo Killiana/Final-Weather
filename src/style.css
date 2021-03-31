@@ -1,5 +1,4 @@
 .frame {
-  max-width: 700px;
   border: 1px solid grey;
   margin: 20px auto;
   padding: 20px;
@@ -50,4 +49,7 @@ li,
   position: relative;
   bottom: 46px;
   left: 12px;
+}
+.wrapper {
+  max-width: 700px;
 }
