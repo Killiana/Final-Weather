@@ -5,58 +5,57 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta3/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-eOJMYsd53ii+scO/bJGFsiCZc+5NDVN2yr8+0RDqr0Ql0h+rP48ckxlpbzKgwra6" crossorigin="anonymous">
-    <title>Document</title>
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="src/style.css">
+    <title>Document</title>
 </head>
 <body>
     <div class="container">
+        <div class="frame">
         <div class="wrapper">
-<div class="frame">
-<div class="row">
-    <div class="col-3 post">
-        <img src="https://ssl.gstatic.com/onebox/weather/64/cloudy.png" alt="cloudy">
-         <span class="number" id="temperature"> 12 </span>
-        <span class="cels"> °C | <span class="far"> °F</span> </span>
-        </div>
-    <div class="col-3">
-        
-         <ul class="list pose">
-            <li>
-                Precipitation: 10%
+        <div class="row">
+            
+            <div class="col-6">
+            <div class="clearfix">
+                <img src="https://ssl.gstatic.com/onebox/weather/64/sunny_s_cloudy.png"
+                 alt="cloudy"
+                  class="float-left"
+                  id="icon">
+            <div class="float-left wed-temp">     
+            <strong id="temperature">8</strong> <small class="small"> °C |<a href="#"> °F</a></small>
+            
+            </div>
+            
+                <ul class="float-left prost" >
+                    <li class="list" >
+             Precipitation: 10%
             </li>
-            <li id="humidity">
-                Humidity: 63%
+                <li class="list" > Humidity: <span id="humidity"> 31 </span>% </li>
+                <li class="list">Wind:  <span id="wind"> 11 </span>mph </li>
+            </ul>
+            
+
+</div>
+            </div>
+            <div class="col-6 righty">
+        <h1 id="city">Wellington Road, Ashford TW15 3RJ, UK</h1>
+        <ul>        
+            <li class="day" id="day">
+                Monday
             </li>
-            <li id="wind">
-                Wind: 11mph
+            <li id="description">
+                Clear with periodic clouds
             </li>
         </ul>
         </div>
+        </div>
+        </div>
+        <small>
+            <a href="https://github.com/Killiana/Final-Weather" target="_blank"  >Open-source code</a> by Iliyana Boneva
+        </small>
         
-    <div class="col-6 right">
-<h1 id="city">
-    Wellington Road, Ashford TW15 3RJ, UK
-</h1>
-<ul>
-    <li class="grey" id="day" >
-        Saturday
-    </li>
-    <li class="grey" id="description">
-        Cloudy
-    </li>
-</ul>
-</div>
-
-
-</div>
-
-
-</div>
-<small>
-    <a href="https://github.com/Killiana/Final-Weather">Open-source code</a> by Iliyana Boneva
-</small>
     </div>
 </div>
 <script src="src/index.js" ></script>
