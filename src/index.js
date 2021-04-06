@@ -2,11 +2,11 @@ function getDay(timestamp){
   let date = new Date(timestamp);
 let hours = date.getHours();
 if (hours < 10){
- return `0${hours}`;
+ hours `0${hours}`;
 }
 let minutes = date.getMinutes();
 if (minutes < 10){
-  return `0${minutes}`;
+  minutes `0${minutes}`;
 }
 let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday" ];
 let day  = days[date.getDay()];
@@ -36,11 +36,18 @@ function getCity(response){
     iconEl.setAttribute("alt", response.data.weather[0].description);
 }
 
-
+function showCity(city){
 let apiKey = "5d480a9ea4973e7dfcb6ca4444c1582f";
-let city = `London`;
 let units = `metric`;
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=${units}`;
-console.log(apiUrl);
-
 axios.get(apiUrl).then(getCity);
+}
+
+function handleCity(event){
+  event.preventDefault();
+  let cityInput = document.querySelector("#input-element");
+  showCity(cityInput.value);
+}
+
+let form = document.querySelector("#search-form");
+form.addEventListener("submit", handleCity);
