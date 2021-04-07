@@ -23,6 +23,8 @@ function getCity(response){
     let description = document.querySelector("#description");
     let city = document.querySelector("#city");
     let day = document.querySelector("#day");
+showTemp = response.data.main.temp;
+   
     let tempEl = Math.round(response.data.main.temp);
     let windEl = Math.round(response.data.wind.speed);
     let iconEl = document.querySelector("#icon");
@@ -48,6 +50,28 @@ function handleCity(event){
   let cityInput = document.querySelector("#input-element");
   showCity(cityInput.value);
 }
+function getFah(event){
+  event.preventDefault();
+  fahLink.classList.add("active");
+celsLink.classList.remove("active");
+  let fahTemp = document.querySelector("#temperature");
+ 
+  fahTemp.innerHTML = Math.round(showTemp * 9/5) + 32;  
+}
+function getCels(event){
+  event.preventDefault();
+  celsLink.classList.add("active"); 
+  fahLink.classList.remove("active");
+  let celsTemp = document.querySelector("#temperature");
+  celsTemp.innerHTML = Math.round(showTemp);
+}
+let showTemp = null;
 
 let form = document.querySelector("#search-form");
 form.addEventListener("submit", handleCity);
+
+let fahLink = document.querySelector("#fah-link");
+fahLink.addEventListener("click", getFah);
+let celsLink = document.querySelector("#ces-link");
+celsLink.addEventListener("click", getCels);
+showCity("London");

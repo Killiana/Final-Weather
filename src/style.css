@@ -13,6 +13,13 @@ h1 {
   font-size: 20px;
   font-weight: 400;
 }
+.wed-temp .active {
+  color: black;
+  cursor: default;
+}
+.wed-temp .active:hover {
+  text-decoration: none;
+}
 .wed-temp .small {
   position: relative;
   top: -32px;
